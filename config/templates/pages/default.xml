@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
 <template xmlns="http://schemas.sulu.io/template/template"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
 
     <key>default</key>
 
@@ -23,8 +22,57 @@
             <params>
                 <param name="headline" value="true"/>
             </params>
-
             <tag name="sulu.rlp.part"/>
+        </property>
+
+        <property name="color" type="color">
+            <meta>
+                <title lang="en">Color</title>
+            </meta>
+        </property>
+
+        <property name="description" type="text_editor" mandatory="true">
+            <meta>
+                <title lang="en">Description</title>
+            </meta>
+        </property>
+
+        <section name="organizationalDetails">
+            <!-- ... -->
+
+            <properties>
+                <property name="startDate" type="date" colspan="6">
+                    <!-- ... -->
+                </property>
+
+                <property name="endDate" type="date" colspan="6">
+                    <!-- ... -->
+                </property>
+            </properties>
+        </section>
+
+        <property name="single" type="single_select">
+            <meta>
+                <title lang="en">Single Select</title>
+            </meta>
+
+            <params>
+                <param name="default_value" value="option1"/>
+
+                <param name="values" type="collection">
+                    <param name="option1">
+                        <meta>
+                            <title lang="en">Option 1</title>
+                        </meta>
+                    </param>
+
+                    <param name="option2">
+                        <meta>
+                            <title lang="en">Option 2</title>
+                        </meta>
+                    </param>
+                </param>
+            </params>
         </property>
 
         <property name="url" type="resource_locator" mandatory="true">
@@ -32,7 +80,6 @@
                 <title lang="en">Resourcelocator</title>
                 <title lang="de">Adresse</title>
             </meta>
-
             <tag name="sulu.rlp"/>
         </property>
 
@@ -43,4 +90,5 @@
             </meta>
         </property>
     </properties>
+
 </template>
